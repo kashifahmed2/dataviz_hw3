@@ -74,7 +74,7 @@ let svgDancingBar = d3.select("body").select("#dancing-bar-chart")
         .tickFormat(d3.format(".0f"))
         .tickValues([5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95])
 
-    let xAxisTicks = svgDancingBar.append("g")
+    let xAxis = svgDancingBar.append("g")
         .attr("class", "x axis")
         .call(xAxisSettings)
         .call(g => g.selectAll(".domain").remove())
@@ -86,9 +86,9 @@ let svgDancingBar = d3.select("body").select("#dancing-bar-chart")
         .tickPadding(4)
         .tickFormat(d3.format(".0%"))
 
-    let yAxisTicks = svgDancingBar
+    let yAxis = svgDancingBar
         .append("g")
-        .attr("class", "y axis")
+        .attrr("class", "y axis")
         .call(yAxisSettings)
         .call(g => g.selectAll(".domain").remove())
 

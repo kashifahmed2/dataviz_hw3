@@ -10,6 +10,7 @@ let svgMultipleLine = d3.select("body").select("#multiple-line-chart")
         this.parentNode.appendChild(this);
       });
     };
+
     d3.selection.prototype.moveToBack = function() {  
         return this.each(function() { 
             var firstChild = this.parentNode.firstChild; 
@@ -70,10 +71,10 @@ let svgMultipleLine = d3.select("body").select("#multiple-line-chart")
             .call(xAxisSettings)
             .attr("transform", `translate(0, ${height - margin.bottom})`)
 
-        let line = d3.line() //define a line function
+        let line = d3.line() 
             .defined(d => !isNaN(d.pb_games))
-            .x(function (d) { return x(d.year) }) //accessing date 
-            .y(function (d) { return y(d.pb_games) }) //accesssing value 
+            .x(function (d) { return x(d.year) }) 
+            .y(function (d) { return y(d.pb_games) }) 
 
         let grouped_data = d3.group(data, d => d.player_id)
         let highlighted_players = ["StarBa00", "BradTe00", "TarkFr00", "MontJo01", "ElwaJo00"]
@@ -154,7 +155,7 @@ let svgMultipleLine = d3.select("body").select("#multiple-line-chart")
             .style("fill", "black")
             .attr("letter-spacing", 0.4)
 
-        // bottom line
+        
         let baseline = svgMultipleLine.append("line")
             .attr("x1", margin.left)
             .attr("x2", width - margin.left)
