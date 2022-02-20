@@ -36,7 +36,6 @@ let svgMultipleLine = d3.select("body").select("#multiple-line-chart")
             row.age = +row.age
         })
 
-        // defining variables
         let x = d3.scaleLinear()
             .domain(d3.extent(data.map(function(d) {return d.year} )))
             .range([margin.left, width-margin.right])
@@ -45,7 +44,6 @@ let svgMultipleLine = d3.select("body").select("#multiple-line-chart")
             .domain(d3.extent(data.map(function(d) {return d.pb_games})))
             .range([height - margin.bottom, margin.top])
 
-        // defining axes
         let xAxisSettings = d3.axisBottom(x)
             .ticks(8)
             .tickSize(8)
